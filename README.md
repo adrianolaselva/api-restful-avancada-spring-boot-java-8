@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/adrianolaselva/api-restful-avancada-spring-boot-java-8.svg?branch=master)](https://travis-ci.org/adrianolaselva/api-restful-avancada-spring-boot-java-8)
+
 # Ponto Inteligente
 API do sistema de ponto inteligente com Java e Spring Boot.
 ### Detalhes da API RESTful
