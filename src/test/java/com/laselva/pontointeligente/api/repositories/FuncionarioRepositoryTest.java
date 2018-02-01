@@ -1,18 +1,16 @@
-package com.laselva.pontointeligente.api;
+package com.laselva.pontointeligente.api.repositories;
 
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @ActiveProfiles("test")
-public class PontoInteligenteApplicationTests {
+public class FuncionarioRepositoryTest {
+	
 
-	@Test
-	public void contextLoads() {
-	}
-
+	
 }
