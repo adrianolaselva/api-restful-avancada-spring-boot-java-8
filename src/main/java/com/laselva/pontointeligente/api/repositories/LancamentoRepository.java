@@ -16,7 +16,7 @@ import com.laselva.pontointeligente.api.entities.Lancamento;
 /**
  * 
  * @author adriano
- *
+ * 
  */
 @Transactional(readOnly = true)
 @NamedQueries({

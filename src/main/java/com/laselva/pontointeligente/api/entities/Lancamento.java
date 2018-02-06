@@ -38,7 +38,7 @@ public class Lancamento implements Serializable {
 	private TipoEnum tipo;
 	private Funcionario funcionario;
 	
-	private Lancamento() {
+	public Lancamento() {
 		
 	}
 
@@ -62,7 +62,7 @@ public class Lancamento implements Serializable {
 		this.data = data;
 	}
 
-	@Column(name="string", nullable=false)
+	@Column(name="descricao", nullable=false)
 	public String getDescricao() {
 		return descricao;
 	}
@@ -71,7 +71,7 @@ public class Lancamento implements Serializable {
 		this.descricao = descricao;
 	}
 
-	@Column(name="localizacao", nullable=false)
+	@Column(name="localizacao", nullable=true)
 	public String getLocalizacao() {
 		return localizacao;
 	}

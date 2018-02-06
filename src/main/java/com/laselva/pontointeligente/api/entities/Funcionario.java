@@ -37,6 +37,7 @@ public class Funcionario implements Serializable{
 	private String nome;
 	private String email;
 	private String cpf;
+	private String senha;
 	private BigDecimal valorHora;
 	private Float qtdHorasTrabalhoDia;
 	private Float qtdHorasAlmoco;
@@ -46,7 +47,7 @@ public class Funcionario implements Serializable{
 	private Empresa empresa;
 	private List<Lancamento> lancamentos;
 	
-	private Funcionario() {
+	public Funcionario() {
 		
 	}
 	
@@ -175,6 +176,15 @@ public class Funcionario implements Serializable{
 		this.lancamentos = lancamentos;
 	}
 	
+	@Column(name = "senha", nullable = false)
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
 	@PreUpdate
 	public void preUpdate() {
 		this.dataAtualizacao = Calendar.getInstance();

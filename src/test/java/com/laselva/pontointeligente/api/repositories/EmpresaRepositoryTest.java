@@ -27,7 +27,7 @@ public class EmpresaRepositoryTest {
 	@Before
 	public void setUp() {
 		Empresa empresa = new Empresa();
-		empresa.setCnpj(this.CNPJ);
+		empresa.setCnpj(CNPJ);
 		empresa.setRazaoSocial("Empresa teste");
 		this.empresaRepository.save(empresa);
 	}
