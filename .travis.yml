@@ -2,3 +2,18 @@ language: java
 
 jdk:
   - oraclejdk8
+
+addons:
+  apt:
+    packages:
+    - mysql-server-5.6
+    - mysql-client-core-5.6
+    - mysql-client-5.6
+
+before_script:
+  - mysql -u root -e 'create database ponto_inteligente;'
+  - mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'"
+  - mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost'"
+  - echo "USE mysql;\nUPDATE user SET password=PASSWORD('root') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
+
+
