@@ -23,13 +23,13 @@ import com.laselva.pontointeligente.api.repositories.FuncionarioRepository;
 @SpringBootTest
 @ActiveProfiles("test")
 public class FuncionarioServiceTest {
-	
+
 	@MockBean
 	private FuncionarioRepository funcionarioRepository;
-	
+
 	@Autowired
 	private FuncionarioService funcionarioService;
-	
+
 	@Before
 	public void setUp() throws Exception {
 		BDDMockito.given(this.funcionarioRepository.save(Mockito.any(Funcionario.class))).willReturn(new Funcionario());
@@ -37,33 +37,33 @@ public class FuncionarioServiceTest {
 		BDDMockito.given(this.funcionarioRepository.findByCpf(Mockito.anyString())).willReturn(new Funcionario());
 		BDDMockito.given(this.funcionarioRepository.findByEmail(Mockito.anyString())).willReturn(new Funcionario());
 	}
-	
+
 	@Test
 	public void testPersistFuncionario() {
 		Funcionario funcionario = this.funcionarioService.persistir(new Funcionario());
-		
+
 		assertNotNull(funcionario);
 	}
-	
+
 	@Test
 	public void testBuscarPorId() {
 		Optional<Funcionario> funcionario = this.funcionarioService.buscarPorId(1L);
-		
+
 		assertTrue(funcionario.isPresent());
 	}
-	
+
 	@Test
 	public void testBuscarPorCpf() {
 		Optional<Funcionario> funcionario = this.funcionarioService.buscarPorCpf("36162266867");
-		
+
 		assertTrue(funcionario.isPresent());
 	}
-	
+
 	@Test
 	public void testBuscarPorEmail() {
 		Optional<Funcionario> funcionario = this.funcionarioService.buscarPorEmail("adrianolaselva@gmail.com");
-		
+
 		assertTrue(funcionario.isPresent());
 	}
-	
+
 }

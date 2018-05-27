@@ -37,8 +37,8 @@ public class FuncionarioRepositoryTest {
 	@Autowired
 	private FuncionarioRepository funcionarioRepository;
 	
-	private static final String EMAIL = "email@email.com.br";
-	private static final String CPF = "99999999999";
+	private static final String EMAIL = "email@email.com";
+	private static final String CPF = "24291173474";
 	
 	@Before
 	public void setUp() {
@@ -74,14 +74,14 @@ public class FuncionarioRepositoryTest {
 	
 	@Test
 	public void testBuscarFuncionarioPorEmailOuCpfParaEmailInvalido() {
-		Funcionario funcionario = this.funcionarioRepository.findByCpfOrEmail(CPF, "email@emailinvalido.com.br");
+		Funcionario funcionario = this.funcionarioRepository.findByCpfOrEmail(CPF, "email@invalido.com.br");
 		
 		assertNotNull(funcionario);
 	}
 	
 	@Test
 	public void testBuscarFuncionarioPorEmailOuCpfParaCpfInvalido() {
-		Funcionario funcionario = this.funcionarioRepository.findByCpfOrEmail("88888888888", EMAIL);
+		Funcionario funcionario = this.funcionarioRepository.findByCpfOrEmail("12345678901", EMAIL);
 		
 		assertNotNull(funcionario);
 	}
@@ -100,7 +100,7 @@ public class FuncionarioRepositoryTest {
 	
 	public Empresa obterDadosEmpresa() {
 		Empresa empresa = new Empresa();
-		empresa.setCnpj("99.999.999/0001-99");
+		empresa.setCnpj("51463645000100");
 		empresa.setRazaoSocial("Nome da empresa");
 		return empresa;
 	}
