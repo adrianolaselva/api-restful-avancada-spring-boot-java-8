@@ -22,7 +22,7 @@ public class EmpresaRepositoryTest {
 	@Autowired
 	private EmpresaRepository empresaRepository;
 	
-	private static String CNPJ = "51463645000100";
+	private static String CNPJ = "82198127000121";
 	
 	@Before
 	public void setUp() {

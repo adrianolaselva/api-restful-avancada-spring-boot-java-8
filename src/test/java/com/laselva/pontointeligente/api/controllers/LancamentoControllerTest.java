@@ -73,7 +73,7 @@ public class LancamentoControllerTest {
 				.andExpect(status().isOk())
 				.andExpect(jsonPath("$.data.id").value(ID_LANCAMENTO))
 				.andExpect(jsonPath("$.data.tipo").value(TIPO))
-				.andExpect(jsonPath("$.data.data").value(this.dateFormat.format(DATA)))
+				.andExpect(jsonPath("$.data.data").value(this.dateFormat.format(DATA.getTime())))
 				.andExpect(jsonPath("$.data.funcionarioId").value(ID_FUNCIONARIO))
 				.andExpect(jsonPath("$.errors").isEmpty());
 	}
@@ -115,7 +115,7 @@ public class LancamentoControllerTest {
 	private String obterJsonRequisicaoPost() throws JsonProcessingException {
 		LancamentoDto lancamentoDto = new LancamentoDto();
 		lancamentoDto.setId(null);
-		lancamentoDto.setData(this.dateFormat.format(DATA));
+		lancamentoDto.setData(this.dateFormat.format(DATA.getTime()));
 		lancamentoDto.setTipo(TIPO);
 		lancamentoDto.setFuncionarioId(ID_FUNCIONARIO);
 		ObjectMapper mapper = new ObjectMapper();
