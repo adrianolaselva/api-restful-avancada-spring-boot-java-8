@@ -29,5 +29,11 @@ public class EmpresaDto {
 	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
 	}
+
+	@Override
+	public String toString() {
+		return "EmpresaDto [id=" + id + ", razaoSocial=" + razaoSocial + ", cnpj=" + cnpj + "]";
+	}
+	
 	
 }

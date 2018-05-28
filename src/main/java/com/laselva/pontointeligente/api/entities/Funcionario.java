@@ -195,13 +195,15 @@ public class Funcionario implements Serializable{
 		this.dataAtualizacao = Calendar.getInstance();
 		this.dataCriacao = Calendar.getInstance();
 	}
-
+	
 	@Override
 	public String toString() {
-		return "Funcionario [id=" + id + ", name=" + nome + ", email=" + email + ", cpf=" + cpf + ", valorHora="
-				+ valorHora + ", qtdHorasTrabalhoDia=" + qtdHorasTrabalhoDia + ", qtdHorasAlmoco=" + qtdHorasAlmoco
-				+ ", perfil=" + perfil + ", dataCriacao=" + dataCriacao + ", dataAtualizacao=" + dataAtualizacao
-				+ ", empresa=" + empresa + ", lancamentos=" + lancamentos + "]";
+		return "Funcionario [id=" + id + ", nome=" + nome + ", email=" + email + ", cpf=" + cpf + ", senha=" + senha
+				+ ", valorHora=" + valorHora + ", qtdHorasTrabalhoDia=" + qtdHorasTrabalhoDia + ", qtdHorasAlmoco="
+				+ qtdHorasAlmoco + ", perfil=" + perfil + ", dataCriacao=" + dataCriacao + ", dataAtualizacao="
+				+ dataAtualizacao + ", empresa=" + empresa + ", lancamentos=" + lancamentos + "]";
 	}
+
+	
 	
 }
