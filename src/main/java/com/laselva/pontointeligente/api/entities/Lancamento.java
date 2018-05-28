@@ -134,6 +134,8 @@ public class Lancamento implements Serializable {
 				+ ", dataCriacao=" + dataCriacao + ", dataAtualizacao=" + dataAtualizacao + ", tipo=" + tipo
 				+ ", funcionario=" + funcionario + "]";
 	}
+
+	
 	
 	
 }
