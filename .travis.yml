@@ -1,23 +1,22 @@
 language: java
-
 jdk:
-  - oraclejdk8
-
+- oraclejdk8
 addons:
   apt:
     packages:
     - mysql-server-5.6
     - mysql-client-core-5.6
     - mysql-client-5.6
-
 before_script:
-  - mysql -u root -e 'create database ponto_inteligente;'
-  - mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'"
-  - mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost'"
-  - echo "USE mysql;\nUPDATE user SET password=PASSWORD('root') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
-
-
+- mysql -u root -e 'create database ponto_inteligente;'
+- mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'"
+- mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost'"
+- echo "USE mysql;\nUPDATE user SET password=PASSWORD('root') WHERE user='root';\nFLUSH
+  PRIVILEGES;\n" | mysql -u root
 deploy:
   provider: heroku
   api_key:
-    secure: "${HEROKU_API_KEY}"
+    secure: pChjQidQiQbSQEKpUxJAi9BczB71RBVLzDpzBzMROz5PRFkBhSBo9OlqWUw2RhfjAghUs69+op94NUYoqBpIXO9q5lltaqCcDuqx+OzraYsi66rbmvjyRS1cw+tzRlPfE7OtEsb+YTOJXfFBxkPrnNZ8yFLTxGU9CARRRWwKAMxv+fimhNPWsASsMugP4VJd9Hp+hg5pUMcX2BOGpEuQVRQA3GA2r8WxHDFu+FSIPobGgG7VHiUSv4QaWmFnW1c4AOr+ZZ3eFRXbFquckboPlY0T+tNYWqXR9PCOUy2yhwoyGK6kTpdbf11uPyl0C2apiUxQmaWCr2ytFPzrrh/PSzSsGh/J+vU0CLvZQ8MrxS6Efvn1QNGXpyYJnGF+cdR/uM9Pxag0TncaSQb6M/M3W+2dVmWvdJh0TnoRGosjXFF4qfIu3C23cAHoNNmKxjTfFHWPDWciKDhVcljlND5ClLE6No85TyDR0juNZ+GNpZMBr5CvZwT2++ljPGLmfpcRTwveV5tMqWI5hY9IVRmvfauJvaN8IamRU3hQeSgSBJmV6yRGZFH9k1BPz3h9Vdj9aLv1JDILHJGBAHizrW85TCqZf0LoN9TxO70kWUnpJ2S1KTwdky/AaTFGbSFti6sbZK6GVoPYQcyyEHFtuSzs7ZHpK5VqZUw1AU2nuyXAn4A=
+  app: arcane-caverns-99226
+  on:
+    repo: adrianolaselva/api-restful-avancada-spring-boot-java-8
